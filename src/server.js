@@ -2,7 +2,7 @@ const express = require('express');
 const helmet = require('helmet');
 const morgan = require('morgan');
 const cors = require('cors');
-const gitRoutes = require('./routes/git.routes');
+const gitRoutes = require('./routes/gif.routes');
 
 const app = express();
 
