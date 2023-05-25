@@ -27,7 +27,7 @@ To run this project locally, follow the steps below:
 - Configure your .env file according to the .env.example file to specify the different environment variables needed to perform the MongoDB database.
 
 - ```
-    npm run dev
+    npm start
   ```
 
 - Don't forget to also do the same thing with the [frontend](https://github.com/joejoyjoy/meme-webpage-frontend). Get further  instructions on `https://github.com/joejoyjoy/meme-webpage-frontend`
