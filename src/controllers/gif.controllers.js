@@ -1,6 +1,7 @@
 const GifModel = require('../models/gif.model')
 
 const getAllGifs = async (req, res) => {
+  res.header('Access-Control-Allow-Credentials', true);
   res.header('Access-Control-Allow-Origin', '*');
 
   try {
@@ -13,6 +14,7 @@ const getAllGifs = async (req, res) => {
 }
 
 const saveGif = async (req, res) => {
+  res.header('Access-Control-Allow-Credentials', true);
   res.header('Access-Control-Allow-Origin', '*');
 
   const { gifName } = req.params
@@ -31,6 +33,7 @@ const saveGif = async (req, res) => {
 }
 
 const putGifImage = async (req, res) => {
+  res.header('Access-Control-Allow-Credentials', true);
   res.header('Access-Control-Allow-Origin', '*');
 
   const { gifId } = req.params
