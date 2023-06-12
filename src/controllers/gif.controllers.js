@@ -1,7 +1,7 @@
 const GifModel = require('../models/gif.model')
 
 const getAllGifs = async (req, res) => {
-  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Origin', 'https://meme-webpage-backend.vercel.app');
 
   try {
     const allGifs = await GifModel.find()
@@ -13,7 +13,7 @@ const getAllGifs = async (req, res) => {
 }
 
 const saveGif = async (req, res) => {
-  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Origin', 'https://meme-webpage-backend.vercel.app');
 
   const { gifName } = req.params
 
@@ -31,7 +31,7 @@ const saveGif = async (req, res) => {
 }
 
 const putGifImage = async (req, res) => {
-  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Origin', 'https://meme-webpage-backend.vercel.app');
 
   const { gifId } = req.params
   const { imageUrl } = req.body
