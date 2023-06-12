@@ -7,7 +7,7 @@ const gitRoutes = require('./routes/gif.routes');
 const app = express();
 
 app.use(cors({
-  origin: "*"
+  origin: "https://meme-gifs-page.netlify.app"
 }))
 
 app.use(helmet())
