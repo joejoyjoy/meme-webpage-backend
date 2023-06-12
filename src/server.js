@@ -6,7 +6,10 @@ const gitRoutes = require('./routes/gif.routes');
 
 const app = express();
 
-app.use(cors())
+app.use(cors({
+  origin: "*"
+}))
+
 app.use(helmet())
 app.use(morgan('dev'))
 app.use(express.json())
