@@ -1,11 +1,11 @@
-const app = require('./server')
-const Config = require('./config/config')
-const connectDB = require('./db/connect')
+import { listen } from './server'
+import { app as _app } from './config/config'
+import connectDB from './db/connect'
 
 connectDB().then(async function onServerInit() {
   console.log('Database connected')
 
-  app.listen(Config.app.PORT, () => {
-    console.log('Running on port ' + Config.app.PORT);
+  listen(_app.PORT, () => {
+    console.log('Running on port ' + _app.PORT);
   });
 })

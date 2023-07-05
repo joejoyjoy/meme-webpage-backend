@@ -3,7 +3,7 @@ const {
   getAllGifs,
   saveGif,
   putGifImage
-} = require('../controllers/gif.controllers')
+} = require('../controllers/gif.controllers').default
 
 gifRouter
   .get('/gifs', getAllGifs)

@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose')
+import { Schema, model } from 'mongoose'
 
 const GifSchema = new Schema({
   name: {
@@ -14,4 +14,4 @@ const GifSchema = new Schema({
 
 const GifModel = model('Gif', GifSchema)
 
-module.exports = GifModel
+export default GifModel

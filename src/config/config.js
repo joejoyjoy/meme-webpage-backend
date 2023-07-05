@@ -1,6 +1,6 @@
-const dotenv = require('dotenv')
+import { config } from 'dotenv'
 
-dotenv.config()
+config()
 
 const ENV = process.env.NODE_ENV || 'development'
 
@@ -23,4 +23,4 @@ const CONFIG = {
   }
 }
 
-module.exports = CONFIG[ENV]
+export default CONFIG[ENV]
