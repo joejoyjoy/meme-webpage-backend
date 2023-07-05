@@ -1,11 +1,8 @@
-const GifModel = require('../models/gif.model')
+import { find, create, findOneAndUpdate } from '../models/gif.model';
 
 const getAllGifs = async (req, res) => {
-  res.header('Access-Control-Allow-Credentials', true);
-  res.header('Access-Control-Allow-Origin', '*');
-
   try {
-    const allGifs = await GifModel.find()
+    const allGifs = await find()
 
     res.status(200).send({ status: 200, allGifs: allGifs })
   } catch (error) {
@@ -14,9 +11,6 @@ const getAllGifs = async (req, res) => {
 }
 
 const saveGif = async (req, res) => {
-  res.header('Access-Control-Allow-Credentials', true);
-  res.header('Access-Control-Allow-Origin', '*');
-
   const { gifName } = req.params
 
   if (!gifName) {
@@ -24,7 +18,7 @@ const saveGif = async (req, res) => {
   }
   try {
     const name = gifName;
-    const createdGif = await GifModel.create({ name })
+    const createdGif = await create({ name })
 
     res.status(201).send({ data: createdGif })
   } catch (error) {
@@ -33,13 +27,10 @@ const saveGif = async (req, res) => {
 }
 
 const putGifImage = async (req, res) => {
-  res.header('Access-Control-Allow-Credentials', true);
-  res.header('Access-Control-Allow-Origin', '*');
-
   const { gifId } = req.params
   const { imageUrl } = req.body
 
-  const gifStored = await GifModel.findOneAndUpdate(
+  const gifStored = await findOneAndUpdate(
     { _id: gifId },
     {
       imageUrl: imageUrl,
@@ -53,7 +44,7 @@ const putGifImage = async (req, res) => {
   return res.status(200).send({ status: 200, data: gifStored })
 }
 
-module.exports = {
+export default {
   getAllGifs,
   saveGif,
   putGifImage
